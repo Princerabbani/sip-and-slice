@@ -15,7 +15,7 @@ const defaultMenuItems = [
   {id:13,name:"Peri Peri Fries",category:"sides",price:109,tag:"A little kick",desc:"Crispy fries tossed in a bold peri-peri seasoning.",image:"https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=700&q=80"},
   {id:14,name:"Cheese Garlic Bread",category:"sides",price:129,tag:"Cheesy comfort",desc:"Toasted garlic bread with a melty cheese topping.",image:"https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=700&q=80"},
   {id:15,name:"Chocolate Frappe",category:"drinks",price:139,tag:"Sweet treat",desc:"A chilled chocolate coffee-style treat for a little indulgence.",image:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=700&q=80"},
-  {id:16,name:"Lemon Mint Cooler",category:"drinks",price:89,tag:"Fresh & zesty",desc:"A refreshing lemon and mint-inspired cooler.",image:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80"
+  {id:16,name:"Lemon Mint Cooler",category:"drinks",price:89,tag:"Fresh & zesty",desc:"A refreshing lemon and mint-inspired cooler.",image:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80" }
 ];
 const MENU_KEY = "sipSliceMenuV3", CART_KEY = "sipSliceCartV2";
 const $ = (selector, root=document) => root.querySelector(selector);
