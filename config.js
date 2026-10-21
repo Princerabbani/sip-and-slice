@@ -3,10 +3,10 @@ window.restaurantConfig = {
   name: "Sip & Slice",
   tagline: "Good food. Better moments.",
   address: "Lodhan Chowk, Goalpokher, West Bengal, India",
-  phone: "[PHONE]",
-  whatsapp: "[WHATSAPP]", // International format, digits only, e.g. 919876543210
-  email: "[EMAIL]",
-  instagram: "[INSTAGRAM_URL]",
+  phone: "[+91 9735861778]",
+  whatsapp: "[+91 9735061778]", // International format, digits only, e.g. 919876543210
+  email: "[princerabbani786900@gmail.com]",
+  instagram: "[https://www.instagram.com/rabbaniiii.07?vrfl=MTUwZDNyZXZpcjg5bg==]",
   facebook: "[FACEBOOK_URL]",
   youtube: "[YOUTUBE_URL]",
   googleMaps: "https://maps.google.com/?q=Lodhan+Chowk+Goalpokher+West+Bengal",
