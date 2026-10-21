@@ -92,3 +92,78 @@ const contact=$("#contactLink");if(config.phone&&config.phone!=="[PHONE]"&&!Stri
 $("#year").textContent=new Date().getFullYear();const menuToggle=$("#menuToggle"),navLinks=$("#navLinks");menuToggle.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.setAttribute("aria-label",open?"Close navigation":"Open navigation");menuToggle.textContent=open?"×":"☰";});
 $$(".nav-links a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Open navigation");menuToggle.textContent="☰";}));
 renderMenu();renderCart();
+
+/* Supabase session integration */
+(async function initSipSliceAuth() {
+  const SUPABASE_URL = "https://nweserlwmosyivcmpsgs.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_0NYZrXDYFhAq-JWjJikiTw_3d39m3sj";
+
+  if (!window.supabase?.createClient) {
+    console.warn("Supabase SDK is missing. Authentication UI was not updated.");
+    return;
+  }
+
+  const client = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  // Update the navigation login link when a user is signed in.
+  const authLink = document.querySelector(
+    '#navLinks a[href="auth.html"]'
+  );
+
+  async function updateAuthLink(session) {
+    if (!authLink) return;
+
+    if (session?.user) {
+      const name =
+        session.user.user_metadata?.full_name ||
+        session.user.email ||
+        "My account";
+
+      authLink.textContent = name + " · Log out";
+      authLink.href = "#logout";
+      authLink.setAttribute("aria-label", "Log out of Sip & Slice");
+
+      authLink.onclick = async event => {
+        event.preventDefault();
+
+        const confirmed = window.confirm(
+          "Are you sure you want to log out?"
+        );
+
+        if (!confirmed) return;
+
+        const { error } = await client.auth.signOut();
+
+        if (error) {
+          alert("Could not log out. Please try again.");
+          console.error(error);
+          return;
+        }
+
+        window.location.href = "auth.html";
+      };
+    } else {
+      authLink.textContent = "Log in / Sign up ↗";
+      authLink.href = "auth.html";
+      authLink.removeAttribute("aria-label");
+      authLink.onclick = null;
+    }
+  }
+
+  const { data, error } = await client.auth.getSession();
+
+  if (error) {
+    console.error("Could not retrieve the Supabase session:", error);
+    return;
+  }
+
+  await updateAuthLink(data.session);
+
+  client.auth.onAuthStateChange((_event, session) => {
+    updateAuthLink(session);
+  });
+})();
+    
