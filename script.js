@@ -7,8 +7,17 @@ const defaultMenuItems = [
   {id:6,name:"Loaded Nachos",category:"sides",price:139,tag:"Snack o'clock",desc:"Crunchy nachos with a cheesy topping.",image:"https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=700&q=80"},
   {id:7,name:"Iced Coffee",category:"drinks",price:99,tag:"Cool & creamy",desc:"A chilled coffee break, any time of day.",image:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"},
   {id:8,name:"Strawberry Cooler",category:"drinks",price:89,tag:"Berry refreshing",desc:"A fruity, refreshing sip for sunny days.",image:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80"}
+  ,
+  {id:9,name:"Paneer Tikka Pizza",category:"pizza",price:249,tag:"Spicy favourite",desc:"Paneer, peppers, onion and a smoky tikka-style sauce.",image:"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=700&q=80"},
+  {id:10,name:"Double Cheese Pizza",category:"pizza",price:269,tag:"Extra cheesy",desc:"A golden cheesy layer on a classic tomato base.",image:"https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=700&q=80"},
+  {id:11,name:"Crispy Paneer Burger",category:"burger",price:169,tag:"Veg special",desc:"Crunchy paneer, lettuce and creamy house sauce.",image:"https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=700&q=80"},
+  {id:12,name:"BBQ Cheese Burger",category:"burger",price:189,tag:"Smoky & rich",desc:"A satisfying burger with cheese and smoky BBQ flavour.",image:"https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=700&q=80"},
+  {id:13,name:"Peri Peri Fries",category:"sides",price:109,tag:"A little kick",desc:"Crispy fries tossed in a bold peri-peri seasoning.",image:"https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=700&q=80"},
+  {id:14,name:"Cheese Garlic Bread",category:"sides",price:129,tag:"Cheesy comfort",desc:"Toasted garlic bread with a melty cheese topping.",image:"https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=700&q=80"},
+  {id:15,name:"Chocolate Frappe",category:"drinks",price:139,tag:"Sweet treat",desc:"A chilled chocolate coffee-style treat for a little indulgence.",image:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=700&q=80"},
+  {id:16,name:"Lemon Mint Cooler",category:"drinks",price:89,tag:"Fresh & zesty",desc:"A refreshing lemon and mint-inspired cooler.",image:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80"
 ];
-const MENU_KEY = "sipSliceMenuV2", CART_KEY = "sipSliceCartV2";
+const MENU_KEY = "sipSliceMenuV3", CART_KEY = "sipSliceCartV2";
 const $ = (selector, root=document) => root.querySelector(selector);
 const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
 const grid = $("#menuGrid"), toast = $("#toast");
